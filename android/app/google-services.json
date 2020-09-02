@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "685254176245",
+    "firebase_url": "https://book-donation-cc.firebaseio.com",
+    "project_id": "book-donation-cc",
+    "storage_bucket": "book-donation-cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685254176245:android:152e56bc5f67ea4adf44bc",
+        "android_client_info": {
+          "package_name": "me.grayhat.book_donation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685254176245-bn1fqj3h2kflug3q71dnpr6uivsc05dg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwKp5hqdCn05TJT0YCdDwIDIyMUPIK_Wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685254176245-bn1fqj3h2kflug3q71dnpr6uivsc05dg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685254176245:android:9bb57e6114d2d175df44bc",
+        "android_client_info": {
+          "package_name": "me.grayhat.bookdonation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685254176245-bn1fqj3h2kflug3q71dnpr6uivsc05dg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwKp5hqdCn05TJT0YCdDwIDIyMUPIK_Wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685254176245-bn1fqj3h2kflug3q71dnpr6uivsc05dg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
