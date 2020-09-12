@@ -1,23 +1,18 @@
-import 'package:book_donation/screens/signup.dart';
 import 'package:book_donation/utilities/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class LoginScreen extends StatefulWidget {
+class SignupScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   Widget _buildEmailTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          "Email",
-          style: kLabelStyle,
-        ),
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
@@ -49,10 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          "Password",
-          style: kLabelStyle,
-        ),
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
@@ -80,21 +71,128 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildForgotPasswordBtn() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: FlatButton(
-        onPressed: () => print("Forgot Password Pressed"),
-        padding: EdgeInsets.only(right: 0.0),
-        child: Text(
-          "Forgot Password?",
-          style: kLabelStyle,
+  Widget _buildDisplayNameTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: "OpenSans",
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.face,
+                color: Colors.white,
+              ),
+              hintText: "Display Name",
+              hintStyle: kHintTextStyle,
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 
-  Widget _buildLoginBtn() {
+  Widget _buildFirstNameTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: "OpenSans",
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.text_format,
+                color: Colors.white,
+              ),
+              hintText: "First Name",
+              hintStyle: kHintTextStyle,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildLastNameTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: "OpenSans",
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.text_format,
+                color: Colors.white,
+              ),
+              hintText: "Last Name",
+              hintStyle: kHintTextStyle,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPhoneNumberTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            keyboardType: TextInputType.phone,
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: "OpenSans",
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.phone,
+                color: Colors.white,
+              ),
+              hintText: "Enter your Password",
+              hintStyle: kHintTextStyle,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSignupBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
@@ -107,7 +205,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         color: Colors.white,
         child: Text(
-          "LOGIN",
+          "SIGN UP",
           style: TextStyle(
             color: Color(0xFF527DAA),
             letterSpacing: 1.5,
@@ -120,7 +218,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildSignInWithText() {
+  Widget _buildLoginInWithText() {
     return Column(
       children: <Widget>[
         Text(
@@ -132,7 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         SizedBox(height: 20.0),
         Text(
-          "Sign in with",
+          "Sign up with",
           style: kLabelStyle,
         ),
       ],
@@ -182,17 +280,14 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildSignUpBtn() {
+  Widget _buildSignInBtn() {
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => SignupScreen()),
-      ),
+      onTap: () => Navigator.pop(context),
       child: RichText(
         text: TextSpan(
           children: [
             TextSpan(
-              text: "Don't have an Account? ",
+              text: "Already have an Account? ",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
@@ -200,7 +295,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             TextSpan(
-              text: "Sign Up",
+              text: "Sign In",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
@@ -251,7 +346,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Sign In",
+                        "Sign Up",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: "OpenSans",
@@ -259,15 +354,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30.0),
                       _buildEmailTF(),
-                      SizedBox(height: 30.0),
                       _buildPasswordTF(),
-                      _buildForgotPasswordBtn(),
-                      _buildLoginBtn(),
-                      _buildSignInWithText(),
+                      _buildDisplayNameTF(),
+                      _buildFirstNameTF(),
+                      _buildLastNameTF(),
+                      _buildPhoneNumberTF(),
+                      _buildSignupBtn(),
+                      _buildLoginInWithText(),
                       _buildSocialBtnRow(),
-                      _buildSignUpBtn(),
+                      _buildSignInBtn(),
                     ],
                   ),
                 ),
