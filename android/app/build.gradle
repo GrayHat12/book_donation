@@ -35,6 +35,7 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "me.grayhat.book_donation"
         minSdkVersion 16
+        multiDexEnabled true
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -59,6 +60,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }
 
 apply plugin: 'com.android.application'
